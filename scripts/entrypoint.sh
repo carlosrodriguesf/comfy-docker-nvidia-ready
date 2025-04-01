@@ -1,5 +1,5 @@
 #!/bin/bash
 
-source ./install-comfy.sh
+source "$(dirname $0)/install-comfy.sh"
 
 ./venv/bin/python3 main.py --listen

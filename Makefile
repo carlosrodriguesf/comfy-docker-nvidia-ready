@@ -1,5 +1,5 @@
 DOCKER_TAG=comfyui-cuda:lastest
-DOCKER_PARAMS=--rm --runtime nvidia --gpus all -v .:/app -v ./app/tmp:/tmp
+DOCKER_PARAMS=-it --rm --runtime nvidia --gpus all -v .:/app -v ./app/tmp:/tmp
 COMFYUI_PATH=./app/comfyui
 
 # downloads
