@@ -28,7 +28,11 @@ download-controlnet-models:
 	wget -c https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15s2_lineart_anime_fp16.safetensors -P $(COMFYUI_PATH)/models/controlnet/sd15
 	wget -c https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11u_sd15_tile_fp16.safetensors -P $(COMFYUI_PATH)/models/controlnet/sd15
 
-download-models: download-checkpoints download-upscale-models download-controlnet-models
+download-embeddings:
+	wget -c https://huggingface.co/gemasai/verybadimagenegative_v1.3/resolve/main/verybadimagenegative_v1.3.pt -P $(COMFYUI_PATH)/models/embeddings
+	wget -c https://huggingface.co/datasets/gsdf/EasyNegative/resolve/main/EasyNegative.safetensors -P $(COMFYUI_PATH)/models/embeddings
+
+download-models: download-checkpoints download-upscale-models download-controlnet-models download-embeddings
 
 fix-directory-owner:
 	sudo chown -R ${USER}:${USER} ./app
