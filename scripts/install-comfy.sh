@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cd app || exit
-
 if [ ! -d "./comfyui" ]; then
   git clone https://github.com/comfyanonymous/ComfyUI comfyui
 fi
